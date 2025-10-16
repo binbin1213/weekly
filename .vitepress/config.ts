@@ -48,6 +48,11 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/ruanyf/weekly' }
     ],
 
+    // 由于文章数量太多（379篇），本地搜索性能较差
+    // 已暂时禁用，建议使用浏览器的页面内搜索（Ctrl+F / Cmd+F）
+    // 或考虑集成 Algolia DocSearch (https://docsearch.algolia.com/)
+    
+    /*
     search: {
       provider: 'local',
       options: {
@@ -71,6 +76,7 @@ export default defineConfig({
         }
       }
     },
+    */
 
     footer: {
       message: '基于 MIT 许可发布',
