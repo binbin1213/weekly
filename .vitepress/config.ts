@@ -104,6 +104,9 @@ export default defineConfig({
 
   lastUpdated: true,
   cleanUrls: true,
+  
+  // 忽略死链接检查（原文章中可能包含失效链接）
+  ignoreDeadLinks: true,
 
   sitemap: {
     hostname: 'https://your-domain.com'

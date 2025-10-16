@@ -12,7 +12,7 @@
 <a href="https://go.warp.dev/weekly" target="_blank">
 <img alt="Warp sponsorship" width="400" src="https://github.com/warpdotdev/brand-assets/blob/main/Github/Sponsor/Warp-Github-LG-02.png?raw=true">
 <br>
-<h>Warp 专为 AI 代理编码而构建</b>
+<b>Warp 专为 AI 代理编码而构建</b>
 <br>
 <sup>支持 macOS, Linux 和 Windows</sup>
 </a>
