@@ -1,0 +1,124 @@
+/**
+ * 自定义样式
+ */
+
+:root {
+  --vp-c-brand: #646cff;
+  --vp-c-brand-light: #747bff;
+  --vp-c-brand-lighter: #9499ff;
+  --vp-c-brand-dark: #535bf2;
+  --vp-c-brand-darker: #454ce1;
+}
+
+/* 优化中文字体 */
+:root {
+  --vp-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", sans-serif;
+}
+
+/* 文章内容样式优化 */
+.vp-doc {
+  /* 增加行高提升可读性 */
+  line-height: 1.8;
+}
+
+.vp-doc h1 {
+  border-bottom: 2px solid var(--vp-c-divider);
+  padding-bottom: 0.3em;
+}
+
+.vp-doc h2 {
+  margin-top: 2em;
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding-bottom: 0.3em;
+}
+
+/* 图片样式 */
+.vp-doc img {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 1em 0;
+}
+
+/* 链接样式 */
+.vp-doc a {
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.vp-doc a:hover {
+  text-decoration: underline;
+}
+
+/* 引用块样式 */
+.vp-doc blockquote {
+  border-left: 4px solid var(--vp-c-brand);
+  background-color: var(--vp-c-bg-soft);
+  padding: 1em 1.5em;
+  margin: 1em 0;
+}
+
+/* 代码块样式 */
+.vp-doc div[class*='language-'] {
+  border-radius: 8px;
+  margin: 1em 0;
+}
+
+/* 侧边栏优化 */
+.VPSidebar {
+  padding-top: 1em;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .vp-doc {
+    font-size: 15px;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .VPNav,
+  .VPSidebar,
+  .VPFooter {
+    display: none !important;
+  }
+  
+  .vp-doc {
+    max-width: 100% !important;
+  }
+}
+
+/* RSS 订阅按钮样式 */
+.rss-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  background-color: var(--vp-c-brand);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.rss-link:hover {
+  background-color: var(--vp-c-brand-dark);
+  text-decoration: none;
+}
+
+/* 文章目录增强 */
+.vp-doc .table-of-contents {
+  background-color: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 2em 0;
+}
+
+.vp-doc .table-of-contents h2 {
+  margin-top: 0;
+  border: none;
+  padding-bottom: 0;
+}
+
