@@ -9,10 +9,12 @@
   },
   "scripts": {
     "dev": "vitepress dev",
-    "build": "vitepress build",
+    "build": "npm run update-index && vitepress build",
     "preview": "vitepress preview",
     "generate-rss": "tsx scripts/generate-rss.ts",
-    "generate-sidebar": "tsx scripts/generate-sidebar.ts"
+    "generate-sidebar": "tsx scripts/generate-sidebar.ts",
+    "update-index": "tsx scripts/update-index.ts",
+    "get-latest": "tsx scripts/get-latest-issue.ts"
   },
   "keywords": [
     "weekly",

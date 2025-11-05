@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build && npm run generate-rss",
+  "buildCommand": "npm run update-index && npm run build && npm run generate-rss",
   "outputDirectory": ".vitepress/dist",
   "cleanUrls": true,
   "trailingSlash": false,
