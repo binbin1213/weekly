@@ -11,16 +11,30 @@ interface SidebarItem {
 /**
  * 从文件内容中提取年份
  * 优先级：
- * 1. 从图片URL中提取 (bg202601 → 2026)
+ * 1. 从图片URL中提取 (支持 YYMMDD 和 YYYYMMDD 两种格式)
  * 2. 从链接URL中提取 (2026-01/15 → 2026)
  * 3. 回退到期号估算（不推荐，但作为兜底）
  */
 function extractYearFromFile(content: string, issueNumber: number): string {
-  // 方法1: 从图片URL提取 (bg202601 → 2026)
-  const imagePattern = /blogimg\/asset\/(\d{4})\d{2}\//i
+  // 方法1: 从图片URL提取
+  // 早期格式: YYMMDD (如 220204 → 22年04月 → 2022年)
+  // 新格式: YYYYMMDD (如 202601 → 2026年01月)
+  const imagePattern = /blogimg\/asset\/(\d{6})\//i
   const imageMatch = content.match(imagePattern)
   if (imageMatch) {
-    return imageMatch[1]
+    const dateStr = imageMatch[1]
+    const yearPart = parseInt(dateStr.substring(0, 4))
+
+    // 如果前4位 > 2200，说明是 YYMMDD 格式 (如 220204)
+    // 否则是 YYYYMMDD 格式 (如 202601)
+    if (yearPart > 2200) {
+      // YYMMDD 格式：22 → 2022
+      const twoDigitYear = parseInt(dateStr.substring(0, 2))
+      return (2000 + twoDigitYear).toString()
+    } else {
+      // YYYYMMDD 格式：直接取前4位
+      return dateStr.substring(0, 4)
+    }
   }
 
   // 方法2: 从链接URL提取 (2026-01/15 → 2026)
