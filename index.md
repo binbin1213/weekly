@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 阅读最新一期
-      link: /docs/issue-371
+      link: /docs/issue-382
     - theme: alt
       text: RSS 订阅
       link: /feed.xml
@@ -52,7 +52,7 @@ features:
 
 ## 最新期刊
 
-查看 [第 371 期：一个乐观主义者的专访](/docs/issue-371)
+查看 [第 382 期：独立软件的黄昏](/docs/issue-382)
 
 ## 订阅方式
 

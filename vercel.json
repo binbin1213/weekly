@@ -1,42 +1,7 @@
 {
-  "buildCommand": "npm run update-index && npm run build && npm run generate-rss",
-  "outputDirectory": ".vitepress/dist",
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
-    {
-      "source": "/feed.xml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/rss+xml; charset=utf-8"
-        }
-      ]
-    },
-    {
-      "source": "/atom.xml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/atom+xml; charset=utf-8"
-        }
-      ]
-    },
-    {
-      "source": "/feed.json",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/json; charset=utf-8"
-        }
-      ]
+  "build": {
+    "env": {
+      "SITE_URL": "https://weekly-flax.vercel.app"
     }
-  ],
-  "redirects": [
-    {
-      "source": "/weekly",
-      "destination": "/"
-    }
-  ]
+  }
 }
-

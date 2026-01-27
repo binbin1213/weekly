@@ -12,16 +12,16 @@ export default defineConfig({
   lang: 'zh-CN',
   
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: 'RSS Feed', href: '/feed.xml' }],
-    ['meta', { name: 'theme-color', content: '#646cff' }],
+    ['meta', { name: 'theme-color', content: '#3B82F6' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: '科技爱好者周刊' }],
     ['meta', { property: 'og:description', content: '记录每周值得分享的科技内容' }]
   ],
 
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/logo.png',
     
     nav: [
       { text: '首页', link: '/' },
