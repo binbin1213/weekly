@@ -46,7 +46,8 @@ export function generateSidebar(): SidebarItem[] {
 
     // 根据期号推断年份
     let year = '2018'
-    if (num >= 368) year = '2025'
+    if (num >= 381) year = '2026'
+    else if (num >= 368) year = '2025'
     else if (num >= 332) year = '2024'
     else if (num >= 284) year = '2023'
     else if (num >= 237) year = '2022'

@@ -26,10 +26,11 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '最新期刊', link: latestIssueLink },
-      { 
-        text: '年份', 
+      {
+        text: '年份',
         items: [
-          { text: '2025', link: latestIssueLink },
+          { text: '2026', link: latestIssueLink },
+          { text: '2025', link: '/docs/issue-368' },
           { text: '2024', link: '/docs/issue-331' },
           { text: '2023', link: '/docs/issue-284' },
           { text: '2022', link: '/docs/issue-237' },
