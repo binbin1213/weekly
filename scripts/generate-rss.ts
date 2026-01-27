@@ -23,7 +23,7 @@ async function generateRSS() {
   // 创建 Feed 实例
   const feed = new Feed({
     title: '科技爱好者周刊',
-    description: '记录每周值得分享的科技内容，周五发布',
+    description: '记录每周值得分享的科技内容，周五发布\n\nfeedId:201506091313074176+userId:99005074169381888',
     id: siteUrl,
     link: siteUrl,
     language: 'zh-CN',
