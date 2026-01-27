@@ -4,21 +4,31 @@
 
 欢迎投稿文章/软件/资源，请[提交 issue](https://github.com/ruanyf/weekly/issues) 。
 
-> P.S. 讨论区的[《谁在招人》](https://github.com/ruanyf/weekly/issues/8003)，是一个免费的程序员招聘帖，提供大量就业信息，欢迎发布工作/实习岗位。
+> P.S. 讨论区的[《谁在招人》](https://github.com/ruanyf/weekly/issues/8591)，是一个免费的程序员招聘帖，提供大量就业信息，欢迎发布工作/实习岗位。
 
-## 赞助商
+## 2026
 
-<div align="center">
-<a href="https://go.warp.dev/weekly" target="_blank">
-<img alt="Warp sponsorship" width="400" src="https://github.com/warpdotdev/brand-assets/blob/main/Github/Sponsor/Warp-Github-LG-02.png?raw=true">
-<br>
-<b>Warp 专为 AI 代理编码而构建</b>
-<br>
-<sup>支持 macOS, Linux 和 Windows</sup>
-</a>
-</div>
+**一月**
+
+- 第 382 期：[独立软件的黄昏](docs/issue-382.md)
+- 第 381 期：[中国 AI 大模型领导者在想什么](docs/issue-381.md)
+- 第 380 期：[为什么人们拥抱“不对称收益”](docs/issue-380.md)
 
 ## 2025
+
+**十二月**
+
+- 第 379 期：[《硅谷钢铁侠》摘录](docs/issue-379.md)
+- 第 378 期：[预测是新的互联网热点](docs/issue-378.md)
+- 第 377 期：[14万美元的贫困线](docs/issue-377.md)
+- 第 376 期：[太空数据中心的争议](docs/issue-376.md)
+
+**十一月**
+
+- 第 375 期：[一扇门的 Bug](docs/issue-375.md)
+- 第 374 期：[6GHz 的问题](docs/issue-374.md)
+- 第 373 期：[数据模型是新产品的核心](docs/issue-373.md)
+- 第 372 期：[软件界面如何设计](docs/issue-372.md)
 
 **十月**
 
