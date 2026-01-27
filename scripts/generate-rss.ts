@@ -27,7 +27,7 @@ async function generateRSS() {
     id: siteUrl,
     link: siteUrl,
     language: 'zh-CN',
-    image: `${siteUrl}/logo.png`,
+    image: `${siteUrl}/logo-144.png`,
     favicon: `${siteUrl}/favicon.ico`,
     copyright: '原作者：阮一峰',
     updated: new Date(),
