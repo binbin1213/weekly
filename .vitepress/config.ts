@@ -12,7 +12,10 @@ export default defineConfig({
   lang: 'zh-CN',
   
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '144x144', href: '/logo.png' }],
+    ['link', { rel: 'shortcut icon', href: '/favicon-16.png' }],
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: 'RSS Feed', href: '/feed.xml' }],
     ['meta', { name: 'theme-color', content: '#3B82F6' }],
     ['meta', { property: 'og:type', content: 'website' }],
