@@ -35,9 +35,10 @@ jobs:
       
       - name: 合并上游更新
         run: |
-          git merge upstream/master --no-edit --allow-unrelated-histories || {
-            echo "合并发生冲突，尝试使用上游版本"
-            git merge --strategy-option theirs upstream/master --no-edit
+          git merge upstream/master --no-edit --allow-unrelated-histories -X theirs || {
+            echo "⚠️ 合并失败，重试一次"
+            git reset --hard origin/master
+            git merge upstream/master --no-edit --allow-unrelated-histories -X theirs
           }
       
       - name: 推送更新
