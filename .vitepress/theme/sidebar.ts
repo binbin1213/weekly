@@ -9,11 +9,41 @@ interface SidebarItem {
 }
 
 /**
+ * 从文件内容中提取年份
+ * 优先级：
+ * 1. 从图片URL中提取 (bg202601 → 2026)
+ * 2. 从链接URL中提取 (2026-01/15 → 2026)
+ * 3. 回退到期号估算（不推荐，但作为兜底）
+ */
+function extractYearFromFile(content: string, issueNumber: number): string {
+  // 方法1: 从图片URL提取 (bg202601 → 2026)
+  const imagePattern = /blogimg\/asset\/(\d{4})\d{2}\//i
+  const imageMatch = content.match(imagePattern)
+  if (imageMatch) {
+    return imageMatch[1]
+  }
+
+  // 方法2: 从链接URL提取 (2026-01/15 → 2026)
+  const linkPattern = /(\d{4})-\d{2}\//i
+  const linkMatch = content.match(linkPattern)
+  if (linkMatch) {
+    return linkMatch[1]
+  }
+
+  // 方法3: 回退到期号估算（不太准确，仅作兜底）
+  // 假设第1期是2018年4月，每周一期
+  const estimatedDate = new Date('2018-04-20')
+  const weeksToAdd = issueNumber - 1
+  estimatedDate.setDate(estimatedDate.getDate() + weeksToAdd * 7)
+  return estimatedDate.getFullYear().toString()
+}
+
+/**
  * 生成侧边栏配置
  */
 export function generateSidebar(): SidebarItem[] {
   const docsDir = path.resolve(process.cwd(), 'docs')
-  
+
   // 获取所有 issue 文件
   const files = fs.readdirSync(docsDir)
   const issueFiles = files
@@ -26,39 +56,36 @@ export function generateSidebar(): SidebarItem[] {
 
   // 按年份分组
   const issuesByYear: { [year: string]: { num: number; file: string; title: string }[] } = {}
-  
+
   issueFiles.forEach(file => {
     const num = parseInt(file.match(/issue-(\d+)\.md/)?.[1] || '0')
     const filePath = path.join(docsDir, file)
-    
-    // 尝试读取文件标题
+
+    // 尝试读取文件内容和标题
     let title = `第 ${num} 期`
+    let year = '2018' // 默认年份
+
     try {
       const content = fs.readFileSync(filePath, 'utf-8')
+
+      // 提取标题
       const titleMatch = content.match(/^#\s+(.+)$/m)
       if (titleMatch) {
         title = titleMatch[1].replace(/科技爱好者周刊（第\s*\d+\s*期）：?\s*/i, '')
         title = `第 ${num} 期：${title}`
       }
-    } catch (e) {
-      // 忽略错误
-    }
 
-    // 根据期号推断年份
-    let year = '2018'
-    if (num >= 381) year = '2026'
-    else if (num >= 368) year = '2025'
-    else if (num >= 332) year = '2024'
-    else if (num >= 284) year = '2023'
-    else if (num >= 237) year = '2022'
-    else if (num >= 191) year = '2021'
-    else if (num >= 89) year = '2020'
-    else if (num >= 38) year = '2019'
+      // 智能提取年份
+      year = extractYearFromFile(content, num)
+    } catch (e) {
+      // 读取失败，使用默认年份
+      console.warn(`无法读取文件 ${file}，使用默认年份`)
+    }
 
     if (!issuesByYear[year]) {
       issuesByYear[year] = []
     }
-    
+
     issuesByYear[year].push({ num, file, title })
   })
 
