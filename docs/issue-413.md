@@ -208,7 +208,7 @@ macOS 桌面歌词工具，实时查找显示正在播放的歌曲的歌词。�
 
 网络设备拓扑图的网页设计工具。（[@abpyu](https://github.com/ruanyf/weekly/issues/11622) 投稿）
 
-2、[视觉风格图鉴](https://ruanyf.github.io/squoosh/editor)
+2、[视觉风格图鉴](https://visualstyles.jerrymakes.com/)
 
 ![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091309.webp)
 
